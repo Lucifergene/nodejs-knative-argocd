@@ -81,8 +81,8 @@ jobs:
       - run:
           name: Update Knative Service manifest
           command: |
-            yq w -i knative/service.yaml spec.template.metadata.name "$APP_NAME-$CIRCLE_SHA1"
-            yq w -i knative/service.yaml spec.template.spec.containers[0].image "docker.io/$DOCKER_USER/$APP_NAME:$CIRCLE_SHA1"
+            yq w -i knative/service.yaml spec.template.metadata.name "$APP_NAME-$CIRCLE_WORKFLOW_JOB_ID-$CIRCLE_BUILD_NUM"
+            yq w -i knative/service.yaml spec.template.spec.containers[0].image "docker.io/$DOCKER_LOGIN/$APP_NAME:$CIRCLE_SHA1"
       - add_ssh_keys:
           fingerprints:
             - "$SSH_FINGERPRINT"
