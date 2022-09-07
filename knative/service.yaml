@@ -7,11 +7,11 @@ spec:
   template:
     metadata:
       creationTimestamp: null
-      name: nodejs-knative-argocd-6e9c418e3bbb6d919086e6959665e97670ef241c
+      name: nodejs-knative-argocd-aae77b2c-5985-4303-9c24-d8cb1bd6069e-10
     spec:
       containerConcurrency: 0
       containers:
-        - image: docker.io//nodejs-knative-argocd:6e9c418e3bbb6d919086e6959665e97670ef241c
+        - image: docker.io/avik6028/nodejs-knative-argocd:d4e922bf447e3192fbb9311c353b29b121a099df
           name: user-container
           ports:
             - containerPort: 1337
